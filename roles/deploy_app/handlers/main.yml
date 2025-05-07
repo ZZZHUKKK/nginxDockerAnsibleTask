@@ -1,0 +1,6 @@
+---
+- name: restart containers
+  become: yes
+  ansible.builtin.command:
+    cmd: docker-compose -f /opt/app/docker-compose.yaml up -d --force-recreate
+    chdir: /opt/app
